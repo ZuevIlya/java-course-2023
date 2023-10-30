@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
-public class Task5 {
+class Task5 {
 
     private Task5() {
 
@@ -34,15 +34,7 @@ public class Task5 {
         return persons;
     }
 
-    public static class Person implements Comparable<Person> {
-        String name;
-        String secondName;
-
-        public Person(String name, String secondName) {
-            this.name = name;
-            this.secondName = secondName;
-        }
-
+    public record Person(String name, String secondName) implements Comparable<Person> {
         @Override
         public String toString() {
             StringBuilder string = new StringBuilder(this.name);
@@ -52,34 +44,18 @@ public class Task5 {
             return String.valueOf(string);
         }
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getSecondName() {
-            return secondName;
-        }
-
-        public void setSecondName(String secondName) {
-            this.secondName = secondName;
-        }
-
         @Override
-        public int compareTo(Task5.@NotNull Person person) {
-            if ((secondName == null) && (person.getSecondName() == null)) {
-                return name.compareTo(person.getName());
+        public int compareTo(@NotNull Task5.Person person) {
+            if ((secondName == null) && (person.secondName() == null)) {
+                return name.compareTo(person.name());
             }
             if (secondName == null) {
-                return name.compareTo(person.getSecondName());
+                return name.compareTo(person.secondName());
             }
             if (person.secondName == null) {
-                return secondName.compareTo(person.getName());
+                return secondName.compareTo(person.name());
             }
-            return secondName.compareTo(person.getSecondName());
+            return secondName.compareTo(person.secondName());
         }
     }
 }

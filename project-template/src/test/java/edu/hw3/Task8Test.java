@@ -1,5 +1,6 @@
 package edu.hw3;
 
+import edu.hw3.Task8.BackwardIterator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;

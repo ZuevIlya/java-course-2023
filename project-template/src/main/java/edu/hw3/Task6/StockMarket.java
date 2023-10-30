@@ -1,6 +1,6 @@
-package edu.hw3;
+package edu.hw3.Task6;
 
-public interface StockMarket {
+interface StockMarket {
     /** Добавить акцию */
     void add(Stock stock);
     /** Удалить акцию */
@@ -8,5 +8,5 @@ public interface StockMarket {
     void remove(Stock stock);
     /** Самая дорогая акция */
 
-    Stock mostValuableStock();
+    Stock getMostValuableStock();
 }

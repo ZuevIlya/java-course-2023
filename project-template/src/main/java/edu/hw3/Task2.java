@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-public class Task2 {
+class Task2 {
 
     private Task2() {
 
@@ -18,14 +18,15 @@ public class Task2 {
             if (letter == '(') {
                 stack.add(letter);
                 string.append(letter);
-            }
-            if ((letter == ')') && (!stack.isEmpty())) {
+            } else if ((letter == ')') && (!stack.isEmpty())) {
                 string.append(letter);
                 stack.pop();
                 if (stack.isEmpty()) {
                     arrayOfBrackets.add(String.valueOf(string));
                     string = new StringBuilder();
                 }
+            } else {
+                return null;
             }
         }
         return arrayOfBrackets;

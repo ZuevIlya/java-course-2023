@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class Task2Test {
 
@@ -76,5 +77,18 @@ public class Task2Test {
 
         // then
         assertEquals(result, list);
+    }
+
+    @Test
+    @DisplayName("(e) -> null")
+    void test6() {
+        // given
+        String string = "(e)";
+
+        // when
+        List<String> result = Task2.clusteringBrackets(string);
+
+        // then
+        assertNull(result);
     }
 }

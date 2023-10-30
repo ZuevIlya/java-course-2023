@@ -1,10 +1,10 @@
 package edu.hw3;
 
-public class Task1 {
-    private static final int lowerBoundForUpperCase = 65;
-    private static final int upperBoundForUpperCase = 90;
-    private static final int lowerBoundForLowerCase = 97;
-    private static final int upperBoundForLowerCase = 122;
+class Task1 {
+    private static final int LOWER_BOUND_FOR_UPPER_CASE = 65;
+    private static final int UPPER_BOUND_FOR_UPPER_CASE = 90;
+    private static final int LOWER_BOUND_FOR_LOWER_CASE = 97;
+    private static final int UPPER_BOUND_FOR_LOWER_CASE = 122;
 
     private Task1() {
 
@@ -14,18 +14,17 @@ public class Task1 {
         StringBuilder resultString = new StringBuilder();
         for (char c : text.toCharArray()) {
             char newChar = c;
-            if ((c >= lowerBoundForUpperCase) && (c <= upperBoundForUpperCase)) {
-                newChar = changingTheLetter(c, lowerBoundForUpperCase, upperBoundForUpperCase);
-            }
-            if ((c >= lowerBoundForLowerCase) && (c <= upperBoundForLowerCase)) {
-                newChar = changingTheLetter(c, lowerBoundForLowerCase, upperBoundForLowerCase);
+            if ((c >= LOWER_BOUND_FOR_UPPER_CASE) && (c <= UPPER_BOUND_FOR_UPPER_CASE)) {
+                newChar = getMirroredLetter(c, LOWER_BOUND_FOR_UPPER_CASE, UPPER_BOUND_FOR_UPPER_CASE);
+            } else if ((c >= LOWER_BOUND_FOR_LOWER_CASE) && (c <= UPPER_BOUND_FOR_LOWER_CASE)) {
+                newChar = getMirroredLetter(c, LOWER_BOUND_FOR_LOWER_CASE, UPPER_BOUND_FOR_LOWER_CASE);
             }
             resultString.append(newChar);
         }
         return resultString;
     }
 
-    private static char changingTheLetter(char letter, int lowerBound, int upperBound) {
+    private static char getMirroredLetter(char letter, int lowerBound, int upperBound) {
         int distanceToTheUpperBound = upperBound - letter;
         int distanceToTheLowerBound = letter - lowerBound;
         int result = distanceToTheUpperBound - distanceToTheLowerBound;

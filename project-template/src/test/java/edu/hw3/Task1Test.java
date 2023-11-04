@@ -13,7 +13,7 @@ public class Task1Test {
         String string = "Hello world!";
 
         // when
-        String result = String.valueOf(Task1.textEncryption(string));
+        String result = String.valueOf(Task1.encryptText(string));
 
         // then
         assertEquals(result, "Svool dliow!");
@@ -27,7 +27,7 @@ public class Task1Test {
             "Good programmers write code that humans can understand. ― Martin Fowler";
 
         // when
-        String result = String.valueOf(Task1.textEncryption(string));
+        String result = String.valueOf(Task1.encryptText(string));
 
         // then
         assertEquals(result, "Zmb ullo xzm dirgv xlwv gszg z xlnkfgvi xzm fmwvihgzmw. " +
@@ -41,7 +41,7 @@ public class Task1Test {
         String string = "";
 
         // when
-        String result = String.valueOf(Task1.textEncryption(string));
+        String result = String.valueOf(Task1.encryptText(string));
 
         // then
         assertEquals(result, "");

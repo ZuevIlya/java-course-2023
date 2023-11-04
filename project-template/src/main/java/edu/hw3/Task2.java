@@ -15,21 +15,28 @@ class Task2 {
         Stack<Character> stack = new Stack<>();
         StringBuilder string = new StringBuilder("");
         for (char letter: brackets.toCharArray()) {
-            if (letter == '(') {
-                stack.add(letter);
-                string.append(letter);
-            } else if ((letter == ')') && (!stack.isEmpty())) {
-                string.append(letter);
-                stack.pop();
-                if (stack.isEmpty()) {
-                    arrayOfBrackets.add(String.valueOf(string));
-                    string = new StringBuilder();
+            if ((letter == '(') || (letter == ')')) {
+                switch (letter) {
+                    case ('('):
+                        stack.add(letter);
+                        string.append(letter);
+                        break;
+                    case (')'):
+                        if (!stack.isEmpty()) {
+                            string.append(letter);
+                            stack.pop();
+                        } else {
+                            arrayOfBrackets.add(String.valueOf(string));
+                            string = new StringBuilder();
+                        }
+                        break;
+                    default:
+                        return null;
                 }
             } else {
                 return null;
             }
         }
         return arrayOfBrackets;
-
     }
 }

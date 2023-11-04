@@ -10,7 +10,7 @@ class Task1 {
 
     }
 
-    public static StringBuilder textEncryption(String text) {
+    public static StringBuilder encryptText(String text) {
         StringBuilder resultString = new StringBuilder();
         for (char c : text.toCharArray()) {
             char newChar = c;

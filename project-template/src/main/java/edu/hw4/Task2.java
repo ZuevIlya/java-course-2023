@@ -10,6 +10,9 @@ class Task2 {
     }
 
     public static List<Animal> getSortWeightAnimals(List<Animal> list, int k) {
+        if (k > list.size()) {
+            return null;
+        }
         for (int i = 0; i < list.size() - 1; i++) {
             for (int j = i + 1; j < list.size(); j++) {
                 if (list.get(i).weight() < list.get(j).weight()) {

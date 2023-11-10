@@ -17,24 +17,26 @@ public class Task20 {
             StringBuilder errorsString = new StringBuilder();
             // Вызов функций
             if (validateName(animal) != null) {
-                errorsString.append("Name").append(" ");
+                errorsString.append(" ").append("Name");
             }
             if (validateType(animal) != null) {
-                errorsString.append("Type").append(" ");
+                errorsString.append(" ").append("Type");
             }
             if (validateSex(animal) != null) {
-                errorsString.append("Sex").append(" ");
+                errorsString.append(" ").append("Sex");
             }
             if (validateAge(animal) != null) {
-                errorsString.append("Age").append(" ");
+                errorsString.append(" ").append("Age");
             }
             if (validateHeight(animal) != null) {
-                errorsString.append("Height").append(" ");
+                errorsString.append(" ").append("Height");
             }
             if (validateWeight(animal) != null) {
-                errorsString.append("Weight").append(" ");
+                errorsString.append(" ").append("Weight");
             }
-            validationErrorsMap.put(animal.name(), String.valueOf(errorsString));
+            if (!errorsString.isEmpty()) {
+                validationErrorsMap.put(animal.name(), String.valueOf(errorsString).substring(1));
+            }
         }
         return validationErrorsMap;
     }
@@ -48,7 +50,7 @@ public class Task20 {
 
     private static ValidationError validateType(Animal animal) {
         if (animal.type() == null) {
-            return new ValidationError("Type", "Type is null");
+            return new ValidationError("Type", "You need to choose the type");
         }
         return null;
     }
@@ -65,7 +67,7 @@ public class Task20 {
             return new ValidationError("Age", "Age cannot be negative");
         }
         if (animal.type() == null) {
-            return new ValidationError("Type", "You need to choose the type");
+            return null;
         }
         switch (animal.type()) {
             case CAT:
@@ -109,7 +111,7 @@ public class Task20 {
             return new ValidationError("Height", "Height cannot be negative");
         }
         if (animal.type() == null) {
-            return new ValidationError("Type", "You need to choose the type");
+            return null;
         }
         switch (animal.type()) {
             case CAT:
@@ -153,7 +155,7 @@ public class Task20 {
             return new ValidationError("Weight", "Height cannot be negative");
         }
         if (animal.type() == null) {
-            return new ValidationError("Type", "You need to choose the type");
+            return null;
         }
         switch (animal.type()) {
             case CAT:

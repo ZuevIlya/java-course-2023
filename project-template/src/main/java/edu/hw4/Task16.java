@@ -23,7 +23,7 @@ class Task16 {
             int sexComp = sex1.compareTo(sex2);
 
             if (sexComp != 0) {
-                return typeComp;
+                return sexComp;
             }
 
             return animal1.name().compareTo(animal2.name());

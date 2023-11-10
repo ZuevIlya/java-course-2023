@@ -36,7 +36,9 @@ public class Task19 {
             if (validateWeight(animal) != null) {
                 validationErrorsSet.add(validateWeight(animal));
             }
-            validationErrorsMap.put(animal.name(), validationErrorsSet);
+            if (!validationErrorsSet.isEmpty()) {
+                validationErrorsMap.put(animal.name(), validationErrorsSet);
+            }
         }
         return validationErrorsMap;
     }
@@ -50,7 +52,7 @@ public class Task19 {
 
     private static ValidationError validateType(Animal animal) {
         if (animal.type() == null) {
-            return new ValidationError("Type", "Type is null");
+            return new ValidationError("Type", "You need to choose the type");
         }
         return null;
     }

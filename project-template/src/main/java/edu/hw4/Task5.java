@@ -18,6 +18,9 @@ class Task5 {
                 boys = boys + 1;
             }
         }
+        if ((girls == 0) && (boys == 0)) {
+            return null;
+        }
         if (girls > boys) {
             return Animal.Sex.F;
         } else {

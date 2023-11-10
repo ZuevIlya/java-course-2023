@@ -11,11 +11,11 @@ public record Animal(
 ) {
 
     public enum Type {
-        CAT, DOG, BIRD, FISH, SPIDER
+        BIRD, CAT, DOG, FISH, SPIDER
     }
 
     enum Sex {
-        M, F
+        F, M
     }
 
     public int paws() {

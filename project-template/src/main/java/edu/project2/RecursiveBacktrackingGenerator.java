@@ -20,11 +20,17 @@ public class RecursiveBacktrackingGenerator implements Generator {
 
         Stack<Coordinate> stack = new Stack<>();
         Random random = new Random();
-        int startX = random.nextInt(width);
-        int startY = random.nextInt(height);
+        int startX = 0;
+        int startY = 0;
 
         stack.push(new Coordinate(startY, startX));
         grid[startY][startX] = new Cell(startY, startX, Cell.Type.PASSAGE);
+
+        // int endX = 9;
+        // int endY = 9;
+
+        // stack.push(new Coordinate(endY, endX));
+
 
         while (!stack.isEmpty()) {
             Coordinate current = stack.peek();
@@ -50,6 +56,11 @@ public class RecursiveBacktrackingGenerator implements Generator {
                 stack.pop();
             }
         }
+
+        int endX = width-1;
+        int endY = height-1;
+        grid[endY-1][endX] = new Cell(endY-1, endX, Cell.Type.PASSAGE);
+        grid[endY][endX] = new Cell(endY, endX, Cell.Type.PASSAGE);
 
         return new Maze(height, width, grid);
     }

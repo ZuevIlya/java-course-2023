@@ -27,8 +27,7 @@ public class ConsoleMazeRenderer implements Renderer {
             for (int j = 0; j < maze.getWidth(); j++) {
                 Coordinate current = new Coordinate(i, j);
                 if (path.contains(current)) {
-                    System.out.println("Hello");
-                    result.append(" o ");  // Путь
+                    result.append("..");  // Путь
                 } else {
                     result.append(grid[i][j].getType() == Cell.Type.WALL ? "██" : "  ");
                 }

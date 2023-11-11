@@ -11,6 +11,7 @@ public class DepthFirstSearchSolver implements Solver {
         List<Coordinate> path = new ArrayList<>();
 
         dfs(grid, visited, start, end, path);
+        System.out.println(path);
 
         return path;
     }
@@ -27,6 +28,7 @@ public class DepthFirstSearchSolver implements Solver {
         path.add(current);
 
         if (current.equals(end)) {
+            System.out.println("Путь найден");
             return true;  // Путь найден
         }
 

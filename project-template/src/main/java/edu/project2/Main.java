@@ -20,9 +20,7 @@ public class Main {
         // Решение лабиринта
         Solver solver = new DepthFirstSearchSolver();
         List<Coordinate> solution = solver.solve(maze, start, end);
-
         // Отображение лабиринта с найденным путем
-        System.out.println("Maze with Solution:");
         System.out.println(renderer.render(maze, solution));
     }
 }

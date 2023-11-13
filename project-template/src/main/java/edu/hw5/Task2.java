@@ -26,6 +26,7 @@ class Task2 {
     }
 
     public static LocalDate findNextFriday13th(LocalDate date) {
-        return date.with(TemporalAdjusters.nextOrSame(DayOfWeek.FRIDAY)).with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.FRIDAY));
+        return date.with(TemporalAdjusters.nextOrSame(DayOfWeek.FRIDAY))
+            .with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.FRIDAY));
     }
 }

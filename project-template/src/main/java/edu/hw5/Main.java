@@ -3,9 +3,14 @@ package edu.hw5;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Main {
+public final class Main {
+
+    private Main() {
+
+    }
 
     public static void main(String[] args) {
+        /*
 
         // Task1
         // Пример входных данных
@@ -47,5 +52,43 @@ public class Main {
 
         System.out.println(Task4.validatePassword(password1)); // Вывод: false
         System.out.println(Task4.validatePassword(password2)); // Вывод: true
+
+        // Task5
+        String plate1 = "А123ВЕ777";
+        String plate2 = "О777ОО177";
+        String plate3 = "123АВЕ777";
+        String plate4 = "А123ВГ77";
+        String plate5 = "А123ВЕ7777";
+
+        System.out.println(Task5.validateCarPlate(plate1)); // Вывод: true
+        System.out.println(Task5.validateCarPlate(plate2)); // Вывод: true
+        System.out.println(Task5.validateCarPlate(plate3)); // Вывод: false
+        System.out.println(Task5.validateCarPlate(plate4)); // Вывод: false
+        System.out.println(Task5.validateCarPlate(plate5)); // Вывод: false
+
+        // Task6
+        String T = "achfdbaabgabcaabg";
+        String S = "abc";
+
+        boolean isSubsequence = Task6.isSubsequence(S, T);
+
+        if (isSubsequence) {
+            System.out.println(S + " является подпоследовательностью " + T);
+        } else {
+            System.out.println(S + " не является подпоследовательностью " + T);
+        }
+
+        // Task7
+
+        String line1 = "110113";
+        System.out.println(Task7.getMatchingStrings1(line1));
+
+        String line2 = "0";
+        System.out.println(Task7.getMatchingStrings2(line2));
+
+        String line3 = "112";
+        System.out.println(Task7.getMatchingStrings3(line3));
+
+         */
     }
 }

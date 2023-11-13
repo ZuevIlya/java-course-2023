@@ -17,8 +17,10 @@ class Task1 {
         for (String session : sessions) {
             String[] sessionParts = session.split(" - ");
 
-            LocalDateTime startTime = LocalDateTime.parse(sessionParts[0], DateTimeFormatter.ofPattern("yyyy-MM-dd, HH:mm"));
-            LocalDateTime endTime = LocalDateTime.parse(sessionParts[1], DateTimeFormatter.ofPattern("yyyy-MM-dd, HH:mm"));
+            LocalDateTime startTime = LocalDateTime.parse(sessionParts[0], DateTimeFormatter
+                .ofPattern("yyyy-MM-dd, HH:mm"));
+            LocalDateTime endTime = LocalDateTime.parse(sessionParts[1], DateTimeFormatter
+                .ofPattern("yyyy-MM-dd, HH:mm"));
 
             Duration duration = Duration.between(startTime, endTime);
             totalSeconds += duration.getSeconds();

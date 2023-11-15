@@ -10,13 +10,13 @@ public final class Main {
     }
 
     public static void main(String[] args) {
-        /*
+
 
         // Task1
         // Пример входных данных
         List<String> input = List.of(
             "2022-03-12, 20:20 - 2022-03-12, 23:50",
-            "2022-04-01, 21:30 - 2022-04-02, 01:20"
+            "2022-04-01, 21:30 - 2022-05-02, 03:20"
         );
 
         // Вызов функции для подсчета среднего времени
@@ -33,7 +33,6 @@ public final class Main {
         LocalDate date = LocalDate.of(2023, 5, 20); // Пример заданной даты
         LocalDate nextFriday13th = Task2.findNextFriday13th(date);
         System.out.println("Следующая ближайшая пятница 13: " + nextFriday13th);
-
         // Task3
         System.out.println(Task3.parseDate("2020-10-10"));
         System.out.println(Task3.parseDate("2020-12-2"));
@@ -45,6 +44,8 @@ public final class Main {
         System.out.println(Task3.parseDate("1 day ago"));
         System.out.println(Task3.parseDate("2234 days ago"));
         System.out.println(Task3.parseDate("invalid date format"));
+
+        /*
 
         // Task4
         String password1 = "securePassword";

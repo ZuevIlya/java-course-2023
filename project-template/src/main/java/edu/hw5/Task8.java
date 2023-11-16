@@ -7,12 +7,12 @@ class Task8 {
     }
 
     public static boolean getMatchingStrings1(String string) {
-        String regex = "^[01]*[01]$";
+        String regex = "^([01]{2})*[01]$";
         return string.matches(regex);
     }
 
     public static boolean getMatchingStrings2(String string) {
-        String regex = "^(0[01]*1|[01]*0)$";
+        String regex = "^([01]*1|[01]*0)$";
         return string.matches(regex);
     }
 

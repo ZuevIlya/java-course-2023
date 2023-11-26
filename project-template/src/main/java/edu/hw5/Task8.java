@@ -1,23 +1,24 @@
 package edu.hw5;
 
-class Task8 {
+public class Task8 {
 
     private Task8() {
 
     }
 
     public static boolean getMatchingStrings1(String string) {
-        String regex = "^([01]{2})*[01]$";
+        String regex = "[01]([01][01])*";
         return string.matches(regex);
     }
 
     public static boolean getMatchingStrings2(String string) {
-        String regex = "^([01]*1|[01]*0)$";
+       String regex = "(^0([01]{2})*)|(^1[01]([01]{2})*)";
+       // ^0([01]{2})*
         return string.matches(regex);
     }
 
     public static boolean getMatchingStrings3(String string) {
-        String regex = "^(1*01*01*)*$";
+        String regex = "1*0(1*0{3}1*)*";
         return string.matches(regex);
     }
 
